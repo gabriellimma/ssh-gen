@@ -17,8 +17,8 @@ clear
 read -r -p "do you confirm your email? \"$varEmail\" [y/n] " varEmailConfirmation
 
 # get the varEmailConfirmation to upper casen
-varEmailConfirmation=$(printf "$varEmailConfirmation" | tr '[:lower:]' '[:upper:]')
-printf \["$varEmailConfirmation"\]
+varEmailConfirmation=$(printf "%s" "$varEmailConfirmation" | tr '[:lower:]' '[:upper:]')
+printf "[%s]" "$varEmailConfirmation"
 
 if [[ $varEmailConfirmation != "Y" ]]
 then
@@ -28,7 +28,7 @@ else
 	printf "\ngetting ssh key..."
 	ssh-keygen -t ed25519 -C "$varEmail"
 	printf "\n📎 copying to clipboard..."
-	cat /Users/"$USER"/.ssh/id_ed25519.pub | pbcopy
+	pbcopy < /Users/"$USER"/.ssh/id_ed25519.pub
 	printf "\n 🚀 now your're ready to go 🚀\n"
 	printf '\e]8;;https://github.com/settings/ssh/new\e\\access your github account and paste the key in the ssh key section.(CMD + Click)\e]8;;\e\\\n'
 	exit 0
