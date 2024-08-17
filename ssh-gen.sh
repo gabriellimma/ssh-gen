@@ -26,9 +26,10 @@ then
 	exit 1
 else
 	echo "getting ssh key..."
-	ssh-keygen -t ed25519 -C "$varEmail"
+	#ssh-keygen -t ed25519 -C "$varEmail"
 	echo "\n📎 copying to clipboard..."
 	cat /Users/$USER/.ssh/id_ed25519.pub | pbcopy
 	echo "\n 🚀 now your're ready to go 🚀\n"
+	printf '\e]8;;https://github.com/settings/ssh/new\e\\access your github account and paste the key in the ssh key section.\e]8;;\e\\\n'
 	exit 0
 fi
