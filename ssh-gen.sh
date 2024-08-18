@@ -4,8 +4,7 @@
 clear
 
 # echo some info about the script like its pid, the name and what is for
-printf "\n🚀 running $0 script \n🔎 PID: $$ \n🔐 this script will generate an ssh key in your machine to authenticate you on github.\n"
-
+printf "\n🚀 running %s script \n🔎 PID: %d \n🔐 this script will generate an ssh key in your machine to authenticate you on GitHub.\n" "$0" "$$"
 # reads the email from cli imput and store as a variable
 # inside varEmail for use to generate a  github ssh key later.
 read -r -p "please, insert your github account email: " varEmail

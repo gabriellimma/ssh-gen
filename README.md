@@ -1,8 +1,8 @@
 # ssh-gen
 
-An easy way to configure git SSH key, clip and paste to your github account.
+An easy way to configure git SSH key, clip and paste to your GitHub account.
 
-# how to run
+## how to run
 
 just run
 
@@ -10,7 +10,7 @@ just run
 
 inside ssh-get folder to begin your configuration
 
-# how to sign commits
+## how to sign commits
 
 after installing the key, you can sign commits with the commands below:
 
